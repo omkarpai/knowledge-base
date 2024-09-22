@@ -1,4 +1,5 @@
 # Quick setup guide
+- Requires sub-modules to be re-cloned after any repo re-clones. 
 - Follow Hugo [quick start](https://gohugo.io/getting-started/quick-start/). Recommended to install use latest version from snap store.
 - Follow Hugo PaperMod [setup guide](https://github.com/adityatelange/hugo-PaperMod/wiki/Installation).
 - Follow method 2 via Git Submodules to re-clone.
