@@ -15,6 +15,7 @@ jobs:
       - name: Update sub-modules for PaperMod
         run: |
           git submodule update --init --recursive
+          git submodule update --remote --merge
 
       - name: Install Hugo
         run: |
