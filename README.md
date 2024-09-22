@@ -15,3 +15,6 @@
 ## -D option also includes Draft content
 hugo server -D
 ```
+
+### References
+- [UTF-8 emojies](https://www.w3schools.com/charsets/ref_emoji_smileys.asp)
