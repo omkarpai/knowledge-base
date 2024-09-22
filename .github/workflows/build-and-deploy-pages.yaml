@@ -12,6 +12,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
+      - name: Update sub-modules for PaperMod
+        run: |
+          git submodule update --init --recursive
+
       - name: Install Hugo
         run: |
           sudo snap install hugo 
