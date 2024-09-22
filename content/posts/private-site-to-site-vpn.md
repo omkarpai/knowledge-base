@@ -1,7 +1,7 @@
 ---
 author: ["Omkar Pai"]
 title: "Private Site-to-Site VPN"
-date: "2024-04-20"
+date: "2024-11-20"
 description: "Sample article showcasing basic code syntax and formatting for HTML elements."
 summary: "Sample article showcasing basic code syntax and formatting for HTML elements."
 tags: ["markdown", "syntax", "code", "gist"]
