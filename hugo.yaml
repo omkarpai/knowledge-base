@@ -81,16 +81,14 @@ params:
     Title: "Welcome to the blog !"
     Content: >
       <br><br>
-      The articles here are problems I have encountered in my engineering journey thus far.
-      <br><br>
-      My intention is to document them in a clear and concise manner. These should help my future self and whoever is unfortunate enough to read this blog.
+      The articles here are problems I have encountered in my engineering journey thus far and the solutions to them.
       <br><br>
       Please feel free to discuss and suggest improvements on any post.
       <br><br>
       Stay curious &#x270C;
       <br><br><br>
       <i>~ A message from the editor</i>
-     
+
   socialIcons:
     - name: github
       title: View this Blog's source on Github
@@ -98,9 +96,9 @@ params:
     - name: linkedin
       title: Checkout the editor's profile on LinkedIn
       url: "https://www.linkedin.com/in/omkar-pai-928a42110/"
-   
+
   editPost:
-    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+    URL: "https://github.com/omkarpai/knowledge-base/tree/master/content/posts"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
