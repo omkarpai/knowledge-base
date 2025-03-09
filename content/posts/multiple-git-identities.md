@@ -49,7 +49,7 @@ specify a filename of your choice.
 `ssh-keygen` will further ask for a passphrase. You can also leave this empty and proceed.
 <br>
 
-At the end of this section you should now be having a pair of files `id_ed25519` and `id_ed25519.pub`. (I will be assuming the default file names for the sake of this guide).
+At the end of this section you should now be having a pair of files `id_ed25519` and `id_ed25519.pub`. (Assuming the default file names).
 
 {{< tip >}}
 A good idea is to move the SSH key pairs to `.ssh` in your home directory and naming them appropriately to avoid confusion.<br>
