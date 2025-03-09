@@ -27,24 +27,95 @@ These methods work, but personally the additional tweaks make it a tad bit annoy
 with this is to have dedicated working directories for each Git identity / GitHub account.<br><br>
 This is made possible with the `[include]` & `[includeIf]` directives in a `.gitconfig`
 
+This guide is `Linux` focused, but a similar concept should also be applicable on `Windows` & `macOS`
+
 ### Generating new SSH key pairs
 
 {{< note >}}
-Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+Windows users might need to find an alternative to `ssh-keygen` for generating key pairs
 {{< /note >}}
 
+```
+ssh-keygen -t ed25519 -C "YOUR_EMAIL@YOUR_PROVIDER.com"
+```
+
+- `-t` switch is to set the signing algorithm. <br>Available options: `[-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]`
+- `-C` switch sets a comment on the generated key.
+
+`ssh-keygen` will then ask you to enter a file to save the key. You can leave this empty to use the default path `/home/YOUR_USER/.ssh/id_ed25519` or
+specify a filename of your choice.
+<br>
+
+`ssh-keygen` will further ask for a passphrase. You can also leave this empty and proceed.
+<br>
+
+At the end of this section you should now be having a pair of files `id_ed25519` and `id_ed25519.pub`. (I will be assuming the default file names for the sake of this guide).
+
 {{< tip >}}
-Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+A good idea is to move the SSH key pairs to `.ssh` in your home directory and naming them appropriately to avoid confusion.<br>
+Example location: `/home/YOUR_USER/.ssh/key_pairs`<br>
+Example naming: `gh_personal_ed25519`,`gh_personal_ed25519.pub`
 {{< /tip >}}
 
-{{< important >}}
-Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
-{{< /important >}}
+### Adding the public key to GitHub
 
-{{< warning >}}
-Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
-{{< /warning >}}
+We now need to add the public key `id_ed25519.pub` to GitHub.
 
-{{< caution >}}
-Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
-{{< /caution >}}
+- On your GitHub profile page, navigate to GitHub settings.
+- Navigate to `SSH and GPG keys` > `New SSH key`
+
+Fill out the form fields on the following page:
+
+- Title - same as the name for the key pair(`id_ed25519` or `gh_personal_ed25519`). This only serves for identification purposes.
+- Key type - Authentication key.
+- Key - Paste the entire contents of the .pub file here.
+
+Click `Add SSH key`.
+
+<br>
+
+### Adding the private key to SSH config
+
+The two methods described below are mutually exclusive. You can choose to follow either one of them based on what you want to achieve.
+
+#### Method 1: Adding a single system-wide identity.
+
+I am including this method for completeness’ sake as similar functionality can be achieved with [Method 2](#method-2-adding-folder-specific-identities).
+
+- Edit your SSH config `/home/YOUR_USER/.ssh/config` and add the following.
+- You can now use the SSH URLs to clone GitHub repositories.
+
+```
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/PATH_TO_YOUR_PRIVATE_KEY
+    User git
+```
+
+#### Method 2: Adding folder specific identities
+
+This method uses different `.gitconfigs` to specify the different key files to use for specific directories.
+
+- Set up the following files in your home directory
+
+`/home/YOUR_USER/.gitconfig`
+
+```
+[include]
+  path= ./.gitconfig-work
+
+[includeIf "gitdir:~/personal/"]
+  path = ./.gitconfig-personal
+
+```
+
+`/home/YOUR_USER/.gitconfig-personal`
+
+```
+[user]
+	email = 1998opai@gmail.com
+	name = omkarpai
+[core]
+    editor = code --wait
+    sshCommand = "ssh -i ~/.ssh/private_keys/personal-github-ed25519"
+```
