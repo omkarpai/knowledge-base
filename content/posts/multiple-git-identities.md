@@ -77,7 +77,7 @@ Click `Add SSH key`.
 The two methods described below are mutually exclusive. You can choose to follow either one of them based on what you want to achieve.
 
 {{< note >}}
-`.gitconfig` and SSH config paths for Windows users might be different
+`.gitconfig`,folder and SSH config paths for Windows users might be different
 {{< /note >}}
 
 #### Method 1: Adding a single system-wide identity.
@@ -98,7 +98,11 @@ You can now use the SSH URLs to clone GitHub repositories and use other Git func
 #### Method 2: Adding folder specific identities
 
 This method assumes you want to use two different GitHub accounts (personal & work) on the same system.<br>
-You will need to then generate two different key pairs and add them to your work & personal GitHub accounts as described in the [previous section](#adding-the-public-key-to-github).<br><br>
+
+- Create a folder `/home/YOUR_USER/work` in which you want the work identity to be used. We will use the personal identity for any other folder.
+
+You will need to then generate two different key pairs and add them to your work & personal GitHub accounts as described in the [previous section](#adding-the-public-key-to-github).<br>
+
 We use different `.gitconfigs` to specify the different private key files to use for specific directories.
 
 - Set up the following files in your home directory
@@ -133,5 +137,7 @@ We use different `.gitconfigs` to specify the different private key files to use
     sshCommand = "ssh -i PATH_TO_YOUR_WORK_PRIVATE_KEY"
 ```
 
-This will now automatically use your work identity for the work folder & your personal identity for all other folders.
+This will now automatically use your work identity when the current directory contains `/home/YOUR_USER/work/` & your personal identity for all other directories.
 You could also extend this for more folders and identities as required.
+
+You can now use the SSH URLs of any private work repositories to clone them in the `/home/YOUR_USER/work/` directory.
