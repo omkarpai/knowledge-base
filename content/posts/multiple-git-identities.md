@@ -36,3 +36,15 @@ Windows users will need to find an alternative to `ssh-keygen` for generating ke
 {{< tip >}}
 Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
 {{< /tip >}}
+
+{{< important >}}
+Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+{{< /important >}}
+
+{{< warning >}}
+Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+{{< /warning >}}
+
+{{< caution >}}
+Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+{{< /caution >}}

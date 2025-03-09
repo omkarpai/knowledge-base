@@ -35,6 +35,33 @@ iframe {
     fill:#3fb950;
 }
 
+.important-bq{
+    border-inline-start: 3px solid #ab7df8 !important;
+}
+
+.important{
+    color:#ab7df8;
+    fill:#ab7df8;
+}
+
+.warning-bq{
+    border-inline-start: 3px solid #d29922 !important;
+}
+
+.warning{
+    color:#d29922;
+    fill:#d29922;
+}
+
+.caution-bq{
+    border-inline-start: 3px solid #f85149 !important;
+}
+
+.caution{
+    color:#f85149;
+    fill:#f85149;
+}
+
 .custom-bq-title{
     display:flex;
     align-items: center;
