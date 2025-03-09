@@ -27,4 +27,12 @@ These methods work, but personally the additional tweaks make it a tad bit annoy
 with this is to have dedicated working directories for each Git identity / GitHub account.<br><br>
 This is made possible with the `[include]` & `[includeIf]` directives in a `.gitconfig`
 
-### Generating the key pairs
+### Generating new SSH key pairs
+
+{{< note >}}
+Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+{{< /note >}}
+
+{{< tip >}}
+Windows users will need to find an alternative to `ssh-keygen` for generating key pairs
+{{< /tip >}}

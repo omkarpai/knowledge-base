@@ -15,3 +15,35 @@ iframe {
 .entry-cover img {
     border: 1px solid var(--border);
 }
+
+
+.note-bq{
+    border-inline-start: 3px solid #4493f8 !important;
+}
+
+.note{
+    color:#4493f8;
+    fill:#4493f8;
+}
+
+.tip-bq{
+    border-inline-start: 3px solid #3fb950 !important;
+}
+
+.tip{
+    color:#3fb950;
+    fill:#3fb950;
+}
+
+.custom-bq-title{
+    display:flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.octicon{
+    margin-right: 0.5rem;
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+}
