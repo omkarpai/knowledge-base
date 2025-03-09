@@ -2,8 +2,8 @@
 author: ["Omkar Pai"]
 title: "Using multiple GitHub accounts without login"
 date: "2025-03-07"
-description: "Learn a clean way to set-up multiple Git identites with SSH on a single system"
-summary: "Learn a clean way to set-up multiple Git identites with SSH on a single system"
+description: "Learn a clean way to set-up multiple Git identities with SSH on a single system"
+summary: "Learn a clean way to set-up multiple Git identities with SSH on a single system"
 tags: ["git", "GitHub", "ssh"]
 categories: ["git"]
 showToc: true
